@@ -1,3 +1,7 @@
+# Lineage builds these modules through TARGET_KERNEL_EXT_MODULES.
+# The legacy entry point requires Qualcomm DLKM build infrastructure.
+ifneq ($(wildcard $(TOP)/device/qcom/common/dlkm/Build_external_kernelmodule.mk),)
+
 FASTRPC_DLKM_ENABLED := true
 
 ifeq ($(TARGET_KERNEL_DLKM_DISABLE), true)
@@ -51,3 +55,5 @@ $(info intermediates dsp symvers path = $(call intermediates-dir-for,DLKM,dsp-mo
 $(info DLKM_DIR = $(DLKM_DIR))
 
 endif
+
+endif # Qualcomm DLKM build infrastructure
