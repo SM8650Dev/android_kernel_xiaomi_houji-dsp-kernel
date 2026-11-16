@@ -19,6 +19,8 @@ KBUILD_CPPFLAGS += -DCONFIG_DSP_PINEAPPLE=1
 ccflags-y += -DCONFIG_DSP_PINEAPPLE=1
 endif
 
+ccflags-y += -I$(DSP_ROOT)/dsp
+
 LINUXINCLUDE += -I$(DSP_ROOT)/include/linux
 LINUXINCLUDE += -I$(DSP_ROOT)/include/uapi
 
